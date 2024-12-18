@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+base_url='https://raw.githubusercontent.com/github/gitignore/refs/heads/main'
+target="$(pwd)/.gitignore"
+
+for item in $@; do
+    if [ -s $target ]; then
+        printf "\n\n" >> $target
+    fi
+
+    cap_item=${item^}
+
+    printf "# -- %s -- #\n\n" $cap_item >> $target
+    curl "$base_url/$cap_item.gitignore" >> $target
+done
