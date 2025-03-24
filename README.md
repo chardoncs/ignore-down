@@ -8,6 +8,8 @@ Simple and dumb shell script for downloading and merging .gitignore files
 make install
 ```
 
+Also, the script require [cURL](https://curl.se/) (usually preinstalled with your OS) and a Bourne-shell-compatible shell.
+
 ## Usage
 
 ```bash
